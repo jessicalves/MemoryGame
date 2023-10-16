@@ -33,7 +33,7 @@ class Memory : AppCompatActivity() {
         private var previousImageName: String? = null
         private var flippedSquare: Pair<Int, RectF>? = null
         private var matchedPairs = mutableListOf<Pair<Int, RectF>>()
-        private var hits = 0;
+        private var hits = 0
         private val cont = context
 
 
@@ -71,7 +71,6 @@ class Memory : AppCompatActivity() {
                     val right = left + squareSize
                     val bottom = top + squareSize
                     val rect = RectF(left, top, right, bottom)
-                    var index = 0
 
                     val matchedPair = matchedPairs.find { it.second == rect }
                     if (flippedSquare?.second == rect || matchedPair != null) {
@@ -80,8 +79,6 @@ class Memory : AppCompatActivity() {
                     } else {
                         canvas?.drawRect(rect, paint)
                     }
-
-                    index++
                 }
             }
         }
